@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="human" class="com.example.spring.Human">
+        <constructor-arg value="Hayk"/>
+        <constructor-arg value="24"/>
+        <constructor-arg ref="address"/>
+        <constructor-arg ref="humanContact"/>
+    </bean>
+
+    <bean id="address" class="com.example.spring.Address">
+        <constructor-arg value="Armenia"/>
+        <constructor-arg value="Yerevan"/>
+    </bean>
+    <bean id="humanContact" class="com.example.spring.HumanContact">
+        <constructor-arg value="mamyanhayk77@gmail.com"/>
+        <constructor-arg value="+37495158695"/>
+    </bean>
+    <bean id="company" class="com.example.spring.Company">
+        <constructor-arg ref="human"/>
+        <constructor-arg ref="address"/>
+    </bean>
+
+</beans>
